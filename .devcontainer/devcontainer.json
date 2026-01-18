@@ -1,42 +1,18 @@
 {
-  // Name shown in VS Code
-  "name": "TutorHub Frontend Dev Container",
+  "name": "TutorHub Dev Container",
 
-  // Use a custom Dockerfile
   "build": {
-    "dockerfile": "Dockerfile",
-    "context": ".."
+    "dockerfile": "Dockerfile"
   },
 
-  // Forward ports your app runs on
-  // Update these if your app uses a different dev server port
-  "forwardPorts": [3000, 5173, 8080],
+  "workspaceFolder": "/workspace",
 
-  // Automatically install Node Modules on container start
-  "postCreateCommand": "npm install",
+  "forwardPorts": [3000, 5173],
 
-  // Mount the project into the container
-  "workspaceFolder": "/workspace/frontend",
-  "workspaceMount": "source=${localWorkspaceFolder}/frontend,target=/workspace/frontend,type=bind",
+  "postCreateCommand": "cd frontend && npm install",
 
-  // Optional: VS Code Extensions to install into container
   "extensions": [
     "esbenp.prettier-vscode",
-    "dbaeumer.vscode-eslint",
-    "github.vscode-gitlens",
-    "ms-jsdiag.debugger-for-chrome"
-  ],
-
-  // Settings specific to this dev container
-  "settings": {
-    "terminal.integrated.shell.linux": "/bin/bash",
-    "editor.formatOnSave": true
-  },
-
-  // Features to include
-  "features": {
-    "ghcr.io/devcontainers/features/node:1": {
-      "version": "18.x"
-    }
-  }
+    "dbaeumer.vscode-eslint"
+  ]
 }
