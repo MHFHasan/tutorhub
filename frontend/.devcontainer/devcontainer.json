@@ -1,16 +1,11 @@
 {
-  "name": "TutorHub Dev Container",
-
+  "name": "TutorHub Frontend Dev Container",
   "build": {
     "dockerfile": "Dockerfile"
   },
-
   "workspaceFolder": "/workspace",
-
   "forwardPorts": [3000, 5173],
-
-  "postCreateCommand": "cd frontend && npm install",
-
+  "postCreateCommand": "npm install",
   "extensions": [
     "esbenp.prettier-vscode",
     "dbaeumer.vscode-eslint"
